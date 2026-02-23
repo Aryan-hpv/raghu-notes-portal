@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raghu Notes Portal (AR23)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="ng.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">Raghu Notes AR23</div>
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-btn" title="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="#" id="btn-full-drive" target="_blank" class="btn-primary">
+                    <i class="fa-brands fa-google-drive"></i> Full Drive
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="ticker-wrap">
+        <div class="ticker-content">
+            <span class="ticker-item">📢 <strong>Update:</strong> JVD Fee Reimbursement forms for 2023-2027 batch are being updated. Check the WhatsApp community for drafts.</span>
+            <span class="ticker-item">🔥 <strong>Trending:</strong> Deep Learning exam-ready answers uploaded for upcoming mid-exams.</span>
+            <span class="ticker-item">🎓 <strong>Events:</strong> Raghu AI Club logo design competition winners announced!</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Your Study Material, <span style="color: var(--accent-primary);">Simplified.</span></h1>
+            <p>Access notes, past papers, and placement resources instantly.</p>
+            
+            <div class="search-container">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search for Deep Learning, DevOps, Branches...">
+            </div>
+
+            <div class="quick-actions">
+                <a href="#" id="btn-request" target="_blank" class="action-btn">
+                    <i class="fa-solid fa-paper-plane"></i> Request Notes
+                </a>
+                <a href="#" id="btn-contribute" target="_blank" class="action-btn">
+                    <i class="fa-solid fa-upload"></i> Contribute
+                </a>
+                <a href="#" id="btn-whatsapp" target="_blank" class="action-btn whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> Join Community
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Quick Access</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -10px; margin-bottom: 15px;">We'll remember your selection for next time.</p>
+            <div class="selector-box">
+                <div class="input-group">
+                    <select id="yearSelect">
+                        <option value="" disabled selected>Select Year</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <select id="semSelect">
+                        <option value="" disabled selected>Select Semester</option>
+                        <option value="1">1st Semester</option>
+                        <option value="2">2nd Semester</option>
+                    </select>
+                </div>
+                <button class="btn-primary" onclick="openSemesterNotes()">Open Materials</button>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">🔥 Trending Materials</h2>
+            <div class="grid-container" id="trending-container"></div>
+        </section>
+
+        <section>
+            <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Placement & Certifications</h2>
+            <div class="grid-container" id="placement-container"></div>
+        </section>
+
+        <section>
+            <h2 class="section-title">🆕 Recently Added</h2>
+            <div class="grid-container" id="recent-container"></div>
+        </section>
+
+        <section>
+            <h2 class="section-title"><i class="fa-solid fa-building"></i> Departments</h2>
+            <div class="grid-container" id="branches-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Raghu Notes Portal (AR23). Built for students, by students.</p>
+            <p id="last-updated" style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">Last Updated: February 2026</p>
+        </div>
+    </footer>
+
+    <script src="ng.js"></script>
+</body>
+</html>
