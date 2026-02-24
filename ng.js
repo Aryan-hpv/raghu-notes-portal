@@ -11,9 +11,73 @@ const globalLinks = {
 };
 
 const semesterLinks = {
-    "1-1": "#", "1-2": "#", "2-1": "#", "2-2": "#",
-    "3-1": "#", "3-2": "https://drive.google.com/drive/folders/YOUR_3_2_FOLDER",
-    "4-1": "#", "4-2": "#"
+
+
+    // ==========================================
+// 🗂 DATA MANAGEMENT (Updated Keys)
+// ==========================================
+
+// Now the keys are "BRANCH-YEAR-SEM"
+    // First Year (Common to all usually)
+    "FY-1-1": "https://drive.google.com/drive/folders/FY_1_1_LINK",
+    "FY-1-2": "https://drive.google.com/drive/folders/FY_1_2_LINK",
+    
+    // CSE Links
+    "CSE-2-1": "#",
+    "CSE-2-2": "#",
+    "CSE-3-1": "#",
+    "CSE-3-2": "https://drive.google.com/drive/folders/YOUR_CSE_3_2_FOLDER",
+    "CSE-4-1": "#",
+    "CSE-4-2": "#",
+
+    // ECE Links
+    "ECE-2-1": "#",
+    // ... Add more branches and semesters as you get the Drive links!
+};
+
+// ... (keep your other data arrays like trendingData here) ...
+
+// ==========================================
+// 🧠 APPLICATION LOGIC
+// ==========================================
+
+// 💾 Local Storage for Dropdowns (Updated to include Branch)
+function loadPreferences() {
+    const savedBranch = localStorage.getItem('raghuBranch');
+    const savedYear = localStorage.getItem('raghuYear');
+    const savedSem = localStorage.getItem('raghuSem');
+    
+    if(savedBranch) document.getElementById('branchSelect').value = savedBranch;
+    if(savedYear) document.getElementById('yearSelect').value = savedYear;
+    if(savedSem) document.getElementById('semSelect').value = savedSem;
+}
+
+// 🎯 The Logic to Extract and Combine
+function openSemesterNotes() {
+    const branch = document.getElementById('branchSelect').value;
+    const year = document.getElementById('yearSelect').value;
+    const sem = document.getElementById('semSelect').value;
+
+    if (!branch || !year || !sem) {
+        alert("Please select Branch, Year, and Semester.");
+        return;
+    }
+
+    // Save all three choices for next time they open the portal
+    localStorage.setItem('raghuBranch', branch);
+    localStorage.setItem('raghuYear', year);
+    localStorage.setItem('raghuSem', sem);
+
+    // Combine them to make the exact key (e.g., "CSE-3-2")
+    const key = `${branch}-${year}-${sem}`;
+    const targetLink = semesterLinks[key];
+
+    if (targetLink && targetLink !== "#") {
+        window.open(targetLink, '_blank');
+    } else {
+        alert("Materials for " + branch + " " + year + "-" + sem + " are currently being updated.");
+    }
+}
 };
 
 const trendingData = [
@@ -158,4 +222,5 @@ function handleSearch(e) {
     });
 
 }
+
 
