@@ -3,10 +3,10 @@
 // ==========================================
 
 const globalLinks = {
-    fullDrive: "https://drive.google.com/drive/folders/YOUR_ROOT_FOLDER",
+    fullDrive: "https://drive.google.com/drive/folders/1JfItnHB5p97VdtLYHVz111Ydm6497LIu?usp=drive_link",
     requestForm: "https://forms.gle/YOUR_REQUEST_FORM",
     contributeForm: "https://forms.gle/YOUR_CONTRIBUTE_FORM",
-    whatsapp: "https://chat.whatsapp.com/YOUR_INVITE_LINK",
+    whatsapp: "https://chat.whatsapp.com/BSDhYkmpwvbKZq3CChZ9uN",
     reportIssue: "mailto:support@raghu.edu?subject=Broken Link Report" // Used for the flag icons
 };
 
@@ -37,10 +37,11 @@ const recentData = [
 ];
 
 const branchesData = [
-    { title: "Computer Science (CSE)", link: "#", icon: "fa-laptop-code" },
-    { title: "Electronics (ECE)", link: "#", icon: "fa-microchip" },
-    { title: "Mechanical (MECH)", link: "#", icon: "fa-cogs" },
-    { title: "Civil Engineering", link: "#", icon: "fa-hard-hat" }
+    { title: "Computer Science (CSE)", link: "https://drive.google.com/drive/folders/1Jpd-qegwibBbD92tJhMu9Ittw_Xx9-9d?usp=drive_link", icon: "fa-laptop-code" },
+    { title: "Electronics (ECE)", link: "https://drive.google.com/drive/folders/1JpSNqNSsYTYJEHJ8Repns2LX0obQ_LB7?usp=drive_link", icon: "fa-microchip" },
+    { title: "CSM  (ai&ml)", link: "https://drive.google.com/drive/folders/1JuMkCDFU0O1wTOYoVB2itjH0fqHmuTqT?usp=drive_link", icon: "fa-cogs" },
+    { title: "Mechanical (MECH)", link: "https://drive.google.com/drive/folders/1Jn4o7_a5ONXFhK61oOSU_byXzRtEVamF?usp=drive_link", icon: "fa-cogs" },
+    { title: "Civil Engineering", link: "https://drive.google.com/drive/folders/1JhfQm71trSCbMuqQPLfhtOnS4TxxVFcg?usp=drive_link", icon: "fa-hard-hat" }
 ];
 
 // ==========================================
@@ -156,4 +157,5 @@ function handleSearch(e) {
         const title = item.getAttribute('data-title');
         item.style.display = title.includes(query) ? 'flex' : 'none';
     });
+
 }
