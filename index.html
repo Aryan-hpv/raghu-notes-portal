@@ -55,29 +55,45 @@
             </div>
         </section>
 
-        <section>
-            <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Quick Access</h2>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -10px; margin-bottom: 15px;">We'll remember your selection for next time.</p>
-            <div class="selector-box">
-                <div class="input-group">
-                    <select id="yearSelect">
-                        <option value="" disabled selected>Select Year</option>
-                        <option value="1">1st Year</option>
-                        <option value="2">2nd Year</option>
-                        <option value="3">3rd Year</option>
-                        <option value="4">4th Year</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <select id="semSelect">
-                        <option value="" disabled selected>Select Semester</option>
-                        <option value="1">1st Semester</option>
-                        <option value="2">2nd Semester</option>
-                    </select>
-                </div>
-                <button class="btn-primary" onclick="openSemesterNotes()">Open Materials</button>
-            </div>
-        </section>
+            <section>
+    <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Quick Access</h2>
+    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -10px; margin-bottom: 15px;">We'll remember your selection for next time.</p>
+    <div class="selector-box">
+        <div class="input-group">
+            <select id="branchSelect">
+                <option value="" disabled selected>Select Branch</option>
+                <option value="CSE">CSE</option>
+                <option value="CSM">CSM (AI & ML)</option>
+                <option value="CSD">CSD (Data Science)</option>
+                <option value="CSC">CSC (Cyber Security)</option>
+                <option value="CSO">CSO (IoT)</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                <option value="MECH">MECH</option>
+                <option value="CIVIL">CIVIL</option>
+                <option value="FY">1st Year (Common)</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <select id="yearSelect">
+                <option value="" disabled selected>Select Year</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <select id="semSelect">
+                <option value="" disabled selected>Select Sem</option>
+                <option value="1">1st Semester</option>
+                <option value="2">2nd Semester</option>
+            </select>
+        </div>
+        <button class="btn-primary" onclick="openSemesterNotes()">Open Materials</button>
+    </div>
+</section>
+    
 
         <section>
             <h2 class="section-title">🔥 Trending Materials</h2>
@@ -87,7 +103,7 @@
         <section>
             <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Placement & Certifications</h2>
             <div class="grid-container" id="placement-container"></div>
-        </section>
+        </section> 
 
         <section>
             <h2 class="section-title">🆕 Recently Added</h2>
@@ -111,4 +127,5 @@
 </body>
 
 </html>
+
 
