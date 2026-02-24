@@ -7,18 +7,11 @@ const globalLinks = {
     requestForm: "https://forms.gle/YOUR_REQUEST_FORM",
     contributeForm: "https://forms.gle/dbgi6LQNZNEqkgbR8",
     whatsapp: "https://chat.whatsapp.com/BSDhYkmpwvbKZq3CChZ9uN",
-    reportIssue: "mailto:raghuengineeringcollagesample@gmail.com?subject=Broken Link Report" // Used for the flag icons
+    reportIssue: "mailto:raghuengineeringcollagesample@gmail.com?subject=Broken Link Report" 
 };
 
-const semesterLinks = {
-
-
-    // ==========================================
-// 🗂 DATA MANAGEMENT (Updated Keys)
-// ==========================================
-
 // Now the keys are "BRANCH-YEAR-SEM"
-    // First Year (Common to all usually)
+const semesterLinks = {
     "FY-1-1": "https://drive.google.com/drive/folders/FY_1_1_LINK",
     "FY-1-2": "https://drive.google.com/drive/folders/FY_1_2_LINK",
     
@@ -31,53 +24,7 @@ const semesterLinks = {
     "CSE-4-2": "#",
 
     // ECE Links
-    "ECE-2-1": "#",
-    // ... Add more branches and semesters as you get the Drive links!
-};
-
-// ... (keep your other data arrays like trendingData here) ...
-
-// ==========================================
-// 🧠 APPLICATION LOGIC
-// ==========================================
-
-// 💾 Local Storage for Dropdowns (Updated to include Branch)
-function loadPreferences() {
-    const savedBranch = localStorage.getItem('raghuBranch');
-    const savedYear = localStorage.getItem('raghuYear');
-    const savedSem = localStorage.getItem('raghuSem');
-    
-    if(savedBranch) document.getElementById('branchSelect').value = savedBranch;
-    if(savedYear) document.getElementById('yearSelect').value = savedYear;
-    if(savedSem) document.getElementById('semSelect').value = savedSem;
-}
-
-// 🎯 The Logic to Extract and Combine
-function openSemesterNotes() {
-    const branch = document.getElementById('branchSelect').value;
-    const year = document.getElementById('yearSelect').value;
-    const sem = document.getElementById('semSelect').value;
-
-    if (!branch || !year || !sem) {
-        alert("Please select Branch, Year, and Semester.");
-        return;
-    }
-
-    // Save all three choices for next time they open the portal
-    localStorage.setItem('raghuBranch', branch);
-    localStorage.setItem('raghuYear', year);
-    localStorage.setItem('raghuSem', sem);
-
-    // Combine them to make the exact key (e.g., "CSE-3-2")
-    const key = `${branch}-${year}-${sem}`;
-    const targetLink = semesterLinks[key];
-
-    if (targetLink && targetLink !== "#") {
-        window.open(targetLink, '_blank');
-    } else {
-        alert("Materials for " + branch + " " + year + "-" + sem + " are currently being updated.");
-    }
-}
+    "ECE-2-1": "#"
 };
 
 const trendingData = [
@@ -87,12 +34,14 @@ const trendingData = [
     { title: "Computer Networks Unit 1 & 2", link: "#", icon: "fa-network-wired" }
 ];
 
-// const placementData = [
- //   { title: "DevOps Engineer Roadmaps & Basics", link: "#", icon: "fa-infinity" },
- //   { title: "Cloud Computing Fundamentals", link: "#", icon: "fa-cloud" },
-   // { title: "Software Testing Interview Q&A", link: "#", icon: "fa-bug" },
-    {// title: "TCS Ninja Aptitude Previous Papers", link: "#", icon: "fa-file-signature" }
-//]; 
+// NOTE: Restored this array! If you delete this, you MUST also delete line 80 where it renders!
+const placementData = [
+    { title: "DevOps Engineer Roadmaps & Basics", link: "#", icon: "fa-infinity" },
+    { title: "Cloud Computing Fundamentals", link: "#", icon: "fa-cloud" },
+    { title: "Software Testing Interview Q&A", link: "#", icon: "fa-bug" },
+    { title: "TCS Ninja Aptitude Previous Papers", link: "#", icon: "fa-file-signature" }
+]; 
+
 const recentData = [
     { title: "CSE 3-2 Lab Manuals Updated", link: "#", icon: "fa-book" },
     { title: "ECE Microprocessors Mid 1 Syllabus", link: "#", icon: "fa-microchip" },
@@ -102,7 +51,7 @@ const recentData = [
 const branchesData = [
     { title: "Computer Science (CSE)", link: "https://drive.google.com/drive/folders/1Jpd-qegwibBbD92tJhMu9Ittw_Xx9-9d?usp=drive_link", icon: "fa-laptop-code" },
     { title: "Electronics (ECE)", link: "https://drive.google.com/drive/folders/1JpSNqNSsYTYJEHJ8Repns2LX0obQ_LB7?usp=drive_link", icon: "fa-microchip" },
-    { title: "CSM  (ai&ml)", link: "https://drive.google.com/drive/folders/1JuMkCDFU0O1wTOYoVB2itjH0fqHmuTqT?usp=drive_link", icon: "fa-cogs" },
+    { title: "CSM (AI & ML)", link: "https://drive.google.com/drive/folders/1JuMkCDFU0O1wTOYoVB2itjH0fqHmuTqT?usp=drive_link", icon: "fa-robot" },
     { title: "Mechanical (MECH)", link: "https://drive.google.com/drive/folders/1Jn4o7_a5ONXFhK61oOSU_byXzRtEVamF?usp=drive_link", icon: "fa-cogs" },
     { title: "Civil Engineering", link: "https://drive.google.com/drive/folders/1JhfQm71trSCbMuqQPLfhtOnS4TxxVFcg?usp=drive_link", icon: "fa-hard-hat" }
 ];
@@ -118,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Render Sections
     renderCards(trendingData, 'trending-container', '🔥 Mid Exams', 'fire');
-    renderCards(placementData, 'placement-container', '💼 Career', 'prep');
+    renderCards(placementData, 'placement-container', '💼 Career', 'prep'); 
     renderCards(recentData, 'recent-container', '🆕 New', 'new');
     renderCards(branchesData, 'branches-container', '', '');
     
@@ -157,70 +106,59 @@ function initTheme() {
 
 // 💾 Local Storage for Dropdowns
 function loadPreferences() {
+    const savedBranch = localStorage.getItem('raghuBranch');
     const savedYear = localStorage.getItem('raghuYear');
     const savedSem = localStorage.getItem('raghuSem');
+    
+    if(savedBranch) document.getElementById('branchSelect').value = savedBranch;
     if(savedYear) document.getElementById('yearSelect').value = savedYear;
     if(savedSem) document.getElementById('semSelect').value = savedSem;
 }
 
+// 🎯 The Logic to Extract and Combine
 function openSemesterNotes() {
-    const year = document.getElementById('yearSelect').value;
-    const sem = document.getElementById('semSelect').value;
+    const branchSelect = document.getElementById('branchSelect');
+    const yearSelect = document.getElementById('yearSelect');
+    const semSelect = document.getElementById('semSelect');
 
-    if (!year || !sem) {
-        alert("Please select both Year and Semester.");
+    // Prevent crashing if a dropdown is missing from HTML
+    if (!branchSelect || !yearSelect || !semSelect) {
+         alert("Dropdown elements missing. Please check HTML.");
+         return;
+    }
+
+    const branch = branchSelect.value;
+    const year = yearSelect.value;
+    const sem = semSelect.value;
+
+    if (!branch || !year || !sem) {
+        alert("Please select Branch, Year, and Semester.");
         return;
     }
 
     // Save choices for next time
+    localStorage.setItem('raghuBranch', branch);
     localStorage.setItem('raghuYear', year);
     localStorage.setItem('raghuSem', sem);
 
-    const key = `${year}-${sem}`;
+    const key = `${branch}-${year}-${sem}`;
     const targetLink = semesterLinks[key];
 
     if (targetLink && targetLink !== "#") {
         window.open(targetLink, '_blank');
     } else {
-        alert("Materials for this semester are currently being updated.");
+        alert("Materials for " + branch + " " + year + "-" + sem + " are currently being updated.");
     }
 }
 
 // Render Cards with "Report Flag"
 function renderCards(dataArray, containerId, badgeText, badgeClass) {
     const container = document.getElementById(containerId);
+    if(!container) return; // safeguard
     container.innerHTML = ''; 
 
     dataArray.forEach(item => {
         const badgeHTML = badgeText ? `<span class="badge ${badgeClass}">${badgeText}</span>` : '';
         const card = `
             <div class="glass-card searchable-item" data-title="${item.title.toLowerCase()}">
-                <a href="${item.link}" target="_blank" style="display:block; height:100%;">
-                    <div class="card-header">
-                        <i class="fa-solid ${item.icon} card-icon"></i>
-                        ${badgeHTML}
-                    </div>
-                    <h3 class="card-title">${item.title}</h3>
-                </a>
-                <a href="${globalLinks.reportIssue}&body=Reporting broken link for: ${encodeURIComponent(item.title)}" 
-                   class="report-link" title="Report broken link">
-                   <i class="fa-solid fa-flag"></i>
-                </a>
-            </div>
-        `;
-        container.innerHTML += card;
-    });
-}
-
-// Real-time Search
-function handleSearch(e) {
-    const query = e.target.value.toLowerCase();
-    const items = document.querySelectorAll('.searchable-item');
-    items.forEach(item => {
-        const title = item.getAttribute('data-title');
-        item.style.display = title.includes(query) ? 'flex' : 'none';
-    });
-
-}
-
-
+                <a href="${item.link}" target="_blank" style="display:block
