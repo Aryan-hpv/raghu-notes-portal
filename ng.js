@@ -23,6 +23,68 @@ const semesterLinks = {
     "CSE-4-1": "#",
     "CSE-4-2": "#",
 
+    // MECH Links
+    "MECH-2-1": "#",
+    "MECH-2-2": "#",
+    "MECH-3-1": "#",
+    "MECH-3-2": "#",
+    "MECH-4-1": "#",
+    "MECH-4-2": "#",
+    // CIVIL Links
+    "CIVIL-2-1": "#",
+    "CIVIL-2-2": "#",
+    "CIVIL-3-1": "#",
+    "CIVIL-3-2": "#",
+    "CIVIL-4-1": "#",
+    "CIVIL-4-2": "#",
+
+    // CSM (AI & ML) Links
+    "CSM-2-1": "#",
+    "CSM-2-2": "#",
+    "CSM-3-1": "#",
+    "CSM-3-2": "#",
+    "CSM-4-1": "#",
+    "CSM-4-2": "#",
+
+    // EEE Links
+    "EEE-2-1": "#",
+    "EEE-2-2": "#",
+    "EEE-3-1": "#",
+    "EEE-3-2": "#",
+    "EEE-4-1": "#",
+    "EEE-4-2": "#",
+//csd Links
+    "CSD-2-1": "#",
+    "CSD-2-2": "#",
+    "CSD-3-1": "#",
+    "CSD-3-2": "#",
+    "CSD-4-1": "#",
+    "CSD-4-2": "#",
+
+    // csc Links
+    "CSC-2-1": "#",
+    "CSC-2-2": "#",
+    "CSC-3-1": "#",
+    "CSC-3-2": "#",
+    "CSC-4-1": "#",
+    "CSC-4-2": "#",
+
+    // cso Links
+    "CSO-2-1": "#",
+    "CSO-2-2": "#",
+    "CSO-3-1": "#",
+    "CSO-3-2": "#",
+    "CSO-4-1": "#",
+    "CSO-4-2": "#",
+
+//civil Links
+    "CIVIL-2-1": "#",
+    "CIVIL-2-2": "#",
+    "CIVIL-3-1": "#",
+    "CIVIL-3-2": "#",
+    "CIVIL-4-1": "#",
+    "CIVIL-4-2": "#",
+    
     // ECE Links
     "ECE-2-1": "#"
 };
@@ -34,13 +96,13 @@ const trendingData = [
     { title: "Computer Networks Unit 1 & 2", link: "#", icon: "fa-network-wired" }
 ];
 
-// NOTE: Restored this array! If you delete this, you MUST also delete line 80 where it renders!
+/* // NOTE: Restored this array! If you delete this, you MUST also delete line 80 where it renders!
 const placementData = [
     { title: "DevOps Engineer Roadmaps & Basics", link: "#", icon: "fa-infinity" },
     { title: "Cloud Computing Fundamentals", link: "#", icon: "fa-cloud" },
     { title: "Software Testing Interview Q&A", link: "#", icon: "fa-bug" },
     { title: "TCS Ninja Aptitude Previous Papers", link: "#", icon: "fa-file-signature" }
-]; 
+]; */
 
 const recentData = [
     { title: "CSE 3-2 Lab Manuals Updated", link: "#", icon: "fa-book" },
@@ -67,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Render Sections
     renderCards(trendingData, 'trending-container', '🔥 Mid Exams', 'fire');
-    renderCards(placementData, 'placement-container', '💼 Career', 'prep'); 
+  //  renderCards(placementData, 'placement-container', '💼 Career', 'prep'); 
     renderCards(recentData, 'recent-container', '🆕 New', 'new');
     renderCards(branchesData, 'branches-container', '', '');
     
@@ -152,6 +214,7 @@ function openSemesterNotes() {
 }
 
 // Render Cards with "Report Flag"
+// Render Cards with "Report Flag"
 function renderCards(dataArray, containerId, badgeText, badgeClass) {
     const container = document.getElementById(containerId);
     if(!container) return; // safeguard
@@ -161,4 +224,31 @@ function renderCards(dataArray, containerId, badgeText, badgeClass) {
         const badgeHTML = badgeText ? `<span class="badge ${badgeClass}">${badgeText}</span>` : '';
         const card = `
             <div class="glass-card searchable-item" data-title="${item.title.toLowerCase()}">
-                <a href="${item.link}" target="_blank" style="display:block
+                <a href="${item.link}" target="_blank" style="display:block; height:100%;">
+                    <div class="card-header">
+                        <i class="fa-solid ${item.icon} card-icon"></i>
+                        ${badgeHTML}
+                    </div>
+                    <h3 class="card-title">${item.title}</h3>
+                </a>
+                <a href="${globalLinks.reportIssue}&body=Reporting broken link for: ${encodeURIComponent(item.title)}" 
+                   class="report-link" title="Report broken link">
+                   <i class="fa-solid fa-flag"></i>
+                </a>
+            </div>
+        `;
+        container.innerHTML += card;
+    });
+}
+
+// Real-time Search
+function handleSearch(e) {
+    const query = e.target.value.toLowerCase();
+    const items = document.querySelectorAll('.searchable-item');
+    items.forEach(item => {
+        const title = item.getAttribute('data-title');
+        if(title) {
+            item.style.display = title.includes(query) ? 'flex' : 'none';
+        }
+    });
+}
