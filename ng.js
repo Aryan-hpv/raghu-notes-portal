@@ -5,9 +5,9 @@
 const globalLinks = {
     fullDrive: "https://drive.google.com/drive/folders/1JfItnHB5p97VdtLYHVz111Ydm6497LIu?usp=drive_link",
     requestForm: "https://forms.gle/YOUR_REQUEST_FORM",
-    contributeForm: "https://forms.gle/YOUR_CONTRIBUTE_FORM",
+    contributeForm: "https://forms.gle/dbgi6LQNZNEqkgbR8",
     whatsapp: "https://chat.whatsapp.com/BSDhYkmpwvbKZq3CChZ9uN",
-    reportIssue: "mailto:support@raghu.edu?subject=Broken Link Report" // Used for the flag icons
+    reportIssue: "mailto:raghuengineeringcollagesample@gmail.com?subject=Broken Link Report" // Used for the flag icons
 };
 
 const semesterLinks = {
@@ -23,13 +23,12 @@ const trendingData = [
     { title: "Computer Networks Unit 1 & 2", link: "#", icon: "fa-network-wired" }
 ];
 
-const placementData = [
-    { title: "DevOps Engineer Roadmaps & Basics", link: "#", icon: "fa-infinity" },
-    { title: "Cloud Computing Fundamentals", link: "#", icon: "fa-cloud" },
-    { title: "Software Testing Interview Q&A", link: "#", icon: "fa-bug" },
-    { title: "TCS Ninja Aptitude Previous Papers", link: "#", icon: "fa-file-signature" }
-];
-
+// const placementData = [
+ //   { title: "DevOps Engineer Roadmaps & Basics", link: "#", icon: "fa-infinity" },
+ //   { title: "Cloud Computing Fundamentals", link: "#", icon: "fa-cloud" },
+   // { title: "Software Testing Interview Q&A", link: "#", icon: "fa-bug" },
+    {// title: "TCS Ninja Aptitude Previous Papers", link: "#", icon: "fa-file-signature" }
+//]; 
 const recentData = [
     { title: "CSE 3-2 Lab Manuals Updated", link: "#", icon: "fa-book" },
     { title: "ECE Microprocessors Mid 1 Syllabus", link: "#", icon: "fa-microchip" },
@@ -159,3 +158,4 @@ function handleSearch(e) {
     });
 
 }
+
