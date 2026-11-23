@@ -1,135 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raghu Notes Portal (AR23)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="ng.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Find Raghu Engineering College AR23 academic materials by branch, year and semester, with verified Google Drive folders.">
+  <meta name="theme-color" content="#0b1220">
+  <title>Raghu Notes Portal | AR23 Academic Resources</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ng.css">
+  <script src="data.js" defer></script>
+  <script src="ng.js" defer></script>
 </head>
 <body>
-
-    <header>
-        <div class="container header-content">
-            <div class="logo">Raghu Notes AR23</div>
-            <div class="header-actions">
-                <button id="theme-toggle" class="icon-btn" title="Toggle Dark/Light Mode">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-                <a href="#" id="btn-full-drive" target="_blank" class="btn-primary">
-                    <i class="fa-brands fa-google-drive"></i> Full Drive
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <div class="ticker-wrap">
-        <div class="ticker-content">
-            <span class="ticker-item">📢 <strong>Update:</strong> JVD Fee Reimbursement forms for 2023-2027 batch are being updated. Check the WhatsApp community for drafts.</span>
-            <span class="ticker-item">🔥 <strong>Trending:</strong> official whatsapp group is opened join for realtime updates .</span>
-            <span class="ticker-item">🎓 <strong>Events:</strong> chakravuyh 2026 dates announced held on march 7 & 8</span>
-        </div>
+  <a href="#main" class="skip">Skip to content</a>
+  <header class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="#top" aria-label="Raghu Notes Portal home"><span class="brandmark">R<span>·</span></span><span>Raghu Notes <small>ACADEMIC PORTAL</small></span></a>
+      <div class="navlinks"><a href="#browse">Browse notes</a><a href="#departments">Departments</a><a href="https://drive.google.com/drive/folders/1JeAl9Fy3nvhVil7zBaOAOhiRCSuItSCV" target="_blank" rel="noopener noreferrer">Full Drive ↗</a><button class="theme" id="themeBtn" type="button" aria-label="Toggle light and dark theme">☾</button></div>
     </div>
-
-    <main class="container">
-        <section class="hero">
-            <h1>Your Study Material, <span style="color: var(--accent-primary);">Simplified.</span></h1>
-            <p>Access notes, past papers, and placement resources instantly.</p>
-            
-            <div class="search-container">
-                <i class="fa-solid fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Search for Deep Learning, DevOps, Branches...">
-            </div>
-
-            <div class="quick-actions">
-                <a href="#" id="btn-request" target="_blank" class="action-btn">
-                    <i class="fa-solid fa-paper-plane"></i> Request Notes
-                </a>
-                <a href="#" id="btn-contribute" target="_blank" class="action-btn">
-                    <i class="fa-solid fa-upload"></i> Contribute
-                </a>
-                <a href="#" id="btn-whatsapp" target="_blank" class="action-btn whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Join Community
-                </a>
-            </div>
-        </section>
-
-            <section>
-    <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Quick Access</h2>
-    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -10px; margin-bottom: 15px;">We'll remember your selection for next time.</p>
-    <div class="selector-box">
-        <div class="input-group">
-            <select id="branchSelect">
-                <option value="" disabled selected>Select Branch</option>
-                <option value="CSE">CSE</option>
-                <option value="CSM">CSM (AI & ML)</option>
-                <option value="CSD">CSD (Data Science)</option>
-                <option value="CSC">CSC (Cyber Security)</option>
-                <option value="CSO">CSO (IoT)</option>
-                <option value="ECE">ECE</option>
-                <option value="EEE">EEE</option>
-                <option value="MECH">MECH</option>
-                <option value="CIVIL">CIVIL</option>
-                <option value="FY">1st Year (Common)</option>
-            </select>
-        </div>
-        <div class="input-group">
-            <select id="yearSelect">
-                <option value="" disabled selected>Select Year</option>
-                <option value="1">1st Year</option>
-                <option value="2">2nd Year</option>
-                <option value="3">3rd Year</option>
-                <option value="4">4th Year</option>
-            </select>
-        </div>
-        <div class="input-group">
-            <select id="semSelect">
-                <option value="" disabled selected>Select Sem</option>
-                <option value="1">1st Semester</option>
-                <option value="2">2nd Semester</option>
-            </select>
-        </div>
-        <button class="btn-primary" onclick="openSemesterNotes()">Open Materials</button>
-    </div>
-</section>
-    
-
-        <section>
-            <h2 class="section-title">🔥 Trending Materials</h2>
-            <div class="grid-container" id="trending-container"></div>
-        </section>
-
-        <!-- 
-         <section>
-            <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Placement & Certifications</h2>
-            <div class="grid-container" id="placement-container"></div>
-        </section> 
-
-
-        -->
-
-        
-        <section>
-            <h2 class="section-title">🆕 Recently Added</h2>
-            <div class="grid-container" id="recent-container"></div>
-        </section>
-
-        <section>
-            <h2 class="section-title"><i class="fa-solid fa-building"></i> Departments</h2>
-            <div class="grid-container" id="branches-container"></div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Raghu Notes Portal (AR23). Built for students, by students.</p>
-            <p id="last-updated" style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">Last Updated: February 2026</p>
-        </div>
-    </footer>
-
-    <script src="ng.js"></script>
+  </header>
+  <main id="main">
+    <section id="top" class="hero shell">
+      <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> REC ACADEMICS <span class="divider">/</span> AR 23</div><h1>Everything you need.<br><em>One place to study.</em></h1><p>Choose your department and semester to jump straight to verified academic resources on Google Drive. No broken shortcuts, no endless scrolling.</p>
+        <div class="hero-actions"><a class="primary" href="#browse">Explore materials <span aria-hidden="true">↗</span></a><a class="secondary" id="heroDrive" href="#" target="_blank" rel="noopener noreferrer">Open full Drive ↗</a></div>
+        <div class="facts"><div><b id="branchCount">—</b><span>Departments</span></div><div><b id="folderCount">—</b><span>Semester folders</span></div><div><b>AR23</b><span>Academic regulation</span></div></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="art-card art-main"><span>YOUR STUDY HUB</span><strong>Resources, sorted.</strong><div class="art-line"></div><div class="art-row"><i>01</i><span>Choose department</span><b>✓</b></div><div class="art-row"><i>02</i><span>Select semester</span><b>✓</b></div><div class="art-row"><i>03</i><span>Open notes</span><b>↗</b></div></div><div class="art-chip">✦ Learn without the clutter</div></div>
+    </section>
+    <div class="stripe"><div class="shell stripe-inner"><span>✦ Built for Raghu students</span><span>● Verified Drive folders</span><span>✦ Notes, manuals & resources</span></div></div>
+    <section class="shell section" id="browse"><div class="section-heading"><div><span class="kicker">START HERE</span><h2>Find your materials</h2><p>Pick a department, year, and semester to get the correct folder.</p></div><span class="count-pill" id="availableCount">Loading folders…</span></div>
+      <div class="finder"><div class="select-grid"><label>Department<select id="branchSelect"><option value="">Select department</option></select></label><label>Year<select id="yearSelect" disabled><option value="">Select year</option></select></label><label>Semester<select id="semSelect" disabled><option value="">Select semester</option></select></label></div><div class="finder-bottom"><span id="selectionHint" role="status" aria-live="polite">Select a department to see available semesters.</span><a id="openBtn" class="primary disabled" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true" tabindex="-1">Open materials ↗</a></div></div>
+    </section>
+    <section class="shell section" id="departments"><div class="section-heading"><div><span class="kicker">EXPLORE</span><h2>Browse by department</h2><p>Only folders confirmed in Google Drive appear as available.</p></div></div><div class="search"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search CSE, AI & ML, 3-2, Mechanical…" autocomplete="off" aria-label="Search departments and semesters"><kbd>/</kbd></div><p class="search-status" id="searchStatus" aria-live="polite"></p><div class="cards" id="departmentGrid"></div><div id="emptyState" class="empty" hidden>No matching departments or semesters. Try another search.</div></section>
+    <section class="shell community"><div><span class="kicker">COMMUNITY POWERED</span><h2>Help make notes accessible.</h2><p>Have useful study material? Share it with other students, or join the community for updates.</p></div><div class="community-actions"><a class="primary" id="contributeLink" target="_blank" rel="noopener noreferrer">Contribute notes ↗</a><a class="secondary" id="communityLink" target="_blank" rel="noopener noreferrer">Join WhatsApp ↗</a></div></section>
+  </main>
+  <footer class="footer"><div class="shell foot"><div><b>Raghu Notes Portal</b><p>Built for students, by students. Unofficial academic resource directory.</p></div><div><span id="updated">Folder catalog verified: —</span><a href="https://drive.google.com/drive/folders/1JeAl9Fy3nvhVil7zBaOAOhiRCSuItSCV" target="_blank" rel="noopener noreferrer">REC ACADEMICS ↗</a></div></div></footer>
 </body>
-
 </html>
-

@@ -1,254 +1,71 @@
-// ==========================================
-// 🗂 DATA MANAGEMENT
-// ==========================================
-
-const globalLinks = {
-    fullDrive: "https://drive.google.com/drive/folders/1JfItnHB5p97VdtLYHVz111Ydm6497LIu?usp=drive_link",
-    requestForm: "https://forms.gle/YOUR_REQUEST_FORM",
-    contributeForm: "https://forms.gle/dbgi6LQNZNEqkgbR8",
-    whatsapp: "https://chat.whatsapp.com/BSDhYkmpwvbKZq3CChZ9uN",
-    reportIssue: "mailto:raghuengineeringcollagesample@gmail.com?subject=Broken Link Report" 
-};
-
-// Now the keys are "BRANCH-YEAR-SEM"
-const semesterLinks = {
-    "FY-1-1": "https://drive.google.com/drive/folders/FY_1_1_LINK",
-    "FY-1-2": "https://drive.google.com/drive/folders/FY_1_2_LINK",
-    
-    // CSE Links
-    "CSE-2-1": "#",
-    "CSE-2-2": "#",
-    "CSE-3-1": "#",
-    "CSE-3-2": "https://drive.google.com/drive/folders/YOUR_CSE_3_2_FOLDER",
-    "CSE-4-1": "#",
-    "CSE-4-2": "#",
-
-    // MECH Links
-    "MECH-2-1": "#",
-    "MECH-2-2": "#",
-    "MECH-3-1": "#",
-    "MECH-3-2": "#",
-    "MECH-4-1": "#",
-    "MECH-4-2": "#",
-    // CIVIL Links
-    "CIVIL-2-1": "#",
-    "CIVIL-2-2": "#",
-    "CIVIL-3-1": "#",
-    "CIVIL-3-2": "#",
-    "CIVIL-4-1": "#",
-    "CIVIL-4-2": "#",
-
-    // CSM (AI & ML) Links
-    "CSM-2-1": "#",
-    "CSM-2-2": "#",
-    "CSM-3-1": "#",
-    "CSM-3-2": "#",
-    "CSM-4-1": "#",
-    "CSM-4-2": "#",
-
-    // EEE Links
-    "EEE-2-1": "#",
-    "EEE-2-2": "#",
-    "EEE-3-1": "#",
-    "EEE-3-2": "#",
-    "EEE-4-1": "#",
-    "EEE-4-2": "#",
-//csd Links
-    "CSD-2-1": "#",
-    "CSD-2-2": "#",
-    "CSD-3-1": "#",
-    "CSD-3-2": "#",
-    "CSD-4-1": "#",
-    "CSD-4-2": "#",
-
-    // csc Links
-    "CSC-2-1": "#",
-    "CSC-2-2": "#",
-    "CSC-3-1": "#",
-    "CSC-3-2": "#",
-    "CSC-4-1": "#",
-    "CSC-4-2": "#",
-
-    // cso Links
-    "CSO-2-1": "#",
-    "CSO-2-2": "#",
-    "CSO-3-1": "#",
-    "CSO-3-2": "#",
-    "CSO-4-1": "#",
-    "CSO-4-2": "#",
-
-//civil Links
-    "CIVIL-2-1": "#",
-    "CIVIL-2-2": "#",
-    "CIVIL-3-1": "#",
-    "CIVIL-3-2": "#",
-    "CIVIL-4-1": "#",
-    "CIVIL-4-2": "#",
-    
-    // ECE Links
-    "ECE-2-1": "#"
-};
-
-const trendingData = [
-    { title: "Deep Learning (3-2) Exam Ready Answers", link: "#", icon: "fa-brain" },
-    { title: "Software Engineering NPTEL Notes", link: "#", icon: "fa-code-branch" },
-    { title: "First Fit / Best Fit Memory Allocation (C Code)", link: "#", icon: "fa-memory" },
-    { title: "Computer Networks Unit 1 & 2", link: "#", icon: "fa-network-wired" }
-];
-
-/* // NOTE: Restored this array! If you delete this, you MUST also delete line 80 where it renders!
-const placementData = [
-    { title: "DevOps Engineer Roadmaps & Basics", link: "#", icon: "fa-infinity" },
-    { title: "Cloud Computing Fundamentals", link: "#", icon: "fa-cloud" },
-    { title: "Software Testing Interview Q&A", link: "#", icon: "fa-bug" },
-    { title: "TCS Ninja Aptitude Previous Papers", link: "#", icon: "fa-file-signature" }
-]; */
-
-const recentData = [
-    { title: "CSE 3-2 Lab Manuals Updated", link: "#", icon: "fa-book" },
-    { title: "ECE Microprocessors Mid 1 Syllabus", link: "#", icon: "fa-microchip" },
-    { title: "CIVIL Structural Analysis Notes", link: "#", icon: "fa-building" }
-];
-
-const branchesData = [
-    { title: "Computer Science (CSE)", link: "https://drive.google.com/drive/folders/1Jpd-qegwibBbD92tJhMu9Ittw_Xx9-9d?usp=drive_link", icon: "fa-laptop-code" },
-    { title: "Electronics (ECE)", link: "https://drive.google.com/drive/folders/1JpSNqNSsYTYJEHJ8Repns2LX0obQ_LB7?usp=drive_link", icon: "fa-microchip" },
-    { title: "CSM (AI & ML)", link: "https://drive.google.com/drive/folders/1JuMkCDFU0O1wTOYoVB2itjH0fqHmuTqT?usp=drive_link", icon: "fa-robot" },
-    { title: "Mechanical (MECH)", link: "https://drive.google.com/drive/folders/1Jn4o7_a5ONXFhK61oOSU_byXzRtEVamF?usp=drive_link", icon: "fa-cogs" },
-    { title: "Civil Engineering", link: "https://drive.google.com/drive/folders/1JhfQm71trSCbMuqQPLfhtOnS4TxxVFcg?usp=drive_link", icon: "fa-hard-hat" }
-];
-
-// ==========================================
-// 🧠 APPLICATION LOGIC
-// ==========================================
-
-document.addEventListener('DOMContentLoaded', () => {
-    setupGlobalLinks();
-    initTheme();
-    loadPreferences();
-    
-    // Render Sections
-    renderCards(trendingData, 'trending-container', '🔥 Mid Exams', 'fire');
-  //  renderCards(placementData, 'placement-container', '💼 Career', 'prep'); 
-    renderCards(recentData, 'recent-container', '🆕 New', 'new');
-    renderCards(branchesData, 'branches-container', '', '');
-    
-    document.getElementById('searchInput').addEventListener('input', handleSearch);
-    
-    // Set dynamic update date
-    const dateOpts = { year: 'numeric', month: 'long', day: 'numeric' };
-    document.getElementById('last-updated').innerText = "Last Updated: " + new Date().toLocaleDateString('en-IN', dateOpts);
-});
-
-// Setup Links
-function setupGlobalLinks() {
-    document.getElementById('btn-full-drive').href = globalLinks.fullDrive;
-    document.getElementById('btn-request').href = globalLinks.requestForm;
-    document.getElementById('btn-contribute').href = globalLinks.contributeForm;
-    document.getElementById('btn-whatsapp').href = globalLinks.whatsapp;
-}
-
-// 🌓 Dark/Light Mode Logic
-function initTheme() {
-    const toggleBtn = document.getElementById('theme-toggle');
-    const savedTheme = localStorage.getItem('raghuTheme');
-    
-    if (savedTheme === 'light') {
-        document.body.classList.add('light-mode');
-        toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-    }
-
-    toggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-        const isLight = document.body.classList.contains('light-mode');
-        localStorage.setItem('raghuTheme', isLight ? 'light' : 'dark');
-        toggleBtn.innerHTML = isLight ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+(() => {
+  'use strict';
+  const data = window.PORTAL_DATA;
+  if (!data || !Array.isArray(data.branches)) return;
+  const $ = id => document.getElementById(id);
+  const driveUrl = id => `https://drive.google.com/drive/folders/${encodeURIComponent(id)}`;
+  const labels = {'1':'1st','2':'2nd','3':'3rd','4':'4th'};
+  const semesterLabel = key => {const [year,sem] = key.split('-'); return `${labels[year]} Year · Sem ${sem}`;};
+  const branchSelect = $('branchSelect'), yearSelect = $('yearSelect'), semSelect = $('semSelect');
+  const allFolders = data.branches.reduce((n,b)=>n+Object.keys(b.semesters).length,0);
+  $('branchCount').textContent = data.branches.length;
+  $('folderCount').textContent = allFolders;
+  $('availableCount').textContent = `${allFolders} linked semester folders`;
+  $('heroDrive').href = driveUrl(data.root);
+  $('contributeLink').href = data.contribute;
+  $('communityLink').href = data.community;
+  $('updated').textContent = `Folder catalog verified: ${new Date(data.updated+'T12:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}`;
+  data.branches.forEach(b => branchSelect.add(new Option(`${b.code} — ${b.name}`,b.code)));
+  const getBranch = () => data.branches.find(b=>b.code===branchSelect.value);
+  const resetOptions = (select,text) => {select.replaceChildren(new Option(text,'')); select.value=''; select.disabled=true;};
+  const getKey = () => `${yearSelect.value}-${semSelect.value}`;
+  function updateTarget() {
+    const b=getBranch(), id=b?.semesters[getKey()]; const link=$('openBtn');
+    if (id) {link.href=driveUrl(id);link.classList.remove('disabled');link.removeAttribute('aria-disabled');link.removeAttribute('tabindex');$('selectionHint').textContent=`Ready: ${b.code} · ${semesterLabel(getKey())}`;
+      try {localStorage.setItem('rnp-selection',JSON.stringify({branch:b.code,year:yearSelect.value,sem:semSelect.value}));} catch(_e){}
+    } else {link.removeAttribute('href');link.classList.add('disabled');link.setAttribute('aria-disabled','true');link.setAttribute('tabindex','-1');$('selectionHint').textContent=b ? 'Choose a year and semester to continue.' : 'Select a department to see available semesters.';}
+  }
+  function updateSemesters(restoreSem='') {
+    resetOptions(semSelect,'Select semester');const b=getBranch(),year=yearSelect.value;
+    if (b&&year) {Object.keys(b.semesters).filter(k=>k.startsWith(year+'-')).sort().forEach(k=>semSelect.add(new Option(`Semester ${k.split('-')[1]}`,k.split('-')[1])));semSelect.disabled=semSelect.options.length===1;if (restoreSem&&[...semSelect.options].some(o=>o.value===restoreSem))semSelect.value=restoreSem;}
+    updateTarget();
+  }
+  function updateYears(restoreYear='',restoreSem='') {
+    resetOptions(yearSelect,'Select year');const b=getBranch();
+    if (b) {const years=[...new Set(Object.keys(b.semesters).map(k=>k.split('-')[0]))].sort();years.forEach(y=>yearSelect.add(new Option(`${labels[y]} Year`,y)));yearSelect.disabled=years.length===0;if (restoreYear&&years.includes(restoreYear))yearSelect.value=restoreYear;}
+    updateSemesters(restoreSem);
+  }
+  branchSelect.addEventListener('change',()=>updateYears());
+  yearSelect.addEventListener('change',()=>updateSemesters());
+  semSelect.addEventListener('change',updateTarget);
+  try {const p=JSON.parse(localStorage.getItem('rnp-selection')||'null');if(p&&data.branches.some(b=>b.code===p.branch)){branchSelect.value=p.branch;updateYears(p.year,p.sem);}else updateTarget();} catch(_e){updateTarget();}
+  const grid=$('departmentGrid');
+  function drawCards(query='') {
+    const q=query.trim().toLowerCase();const results=data.branches.filter(b => !q || `${b.code} ${b.name}`.toLowerCase().includes(q) || Object.keys(b.semesters).some(k=>`${k} ${k.replace('-','-')} ${semesterLabel(k)} ${b.code} ${b.name}`.toLowerCase().includes(q)));
+    const fragment=document.createDocumentFragment();
+    results.forEach(b=>{
+      const article=document.createElement('article');article.className='department-card';
+      const heading=document.createElement('div');heading.className='card-top';
+      const symbol=document.createElement('span');symbol.className='card-symbol';symbol.textContent=b.icon;
+      const badge=document.createElement('span');badge.className='folder-badge';badge.textContent=`${Object.keys(b.semesters).length} semesters`;
+      heading.append(symbol,badge);
+      const name=document.createElement('h3');name.textContent=b.code;
+      const subtitle=document.createElement('p');subtitle.textContent=b.name;
+      const chips=document.createElement('div');chips.className='semester-chips';
+      Object.entries(b.semesters).sort(([a],[c])=>a.localeCompare(c)).forEach(([key,id])=>{
+        if(q && !`${b.code} ${b.name}`.toLowerCase().includes(q) && !`${key} ${semesterLabel(key)}`.toLowerCase().includes(q))return;
+        const a=document.createElement('a');a.href=driveUrl(id);a.target='_blank';a.rel='noopener noreferrer';a.textContent=key;a.setAttribute('aria-label',`${b.code} ${semesterLabel(key)} notes (opens Google Drive)`);a.title=semesterLabel(key);chips.append(a);
+      });
+      const footer=document.createElement('a');footer.className='folder-link';footer.href=driveUrl(b.folder);footer.target='_blank';footer.rel='noopener noreferrer';footer.textContent='All department folders ↗';
+      article.append(heading,name,subtitle,chips,footer);fragment.append(article);
     });
-}
-
-// 💾 Local Storage for Dropdowns
-function loadPreferences() {
-    const savedBranch = localStorage.getItem('raghuBranch');
-    const savedYear = localStorage.getItem('raghuYear');
-    const savedSem = localStorage.getItem('raghuSem');
-    
-    if(savedBranch) document.getElementById('branchSelect').value = savedBranch;
-    if(savedYear) document.getElementById('yearSelect').value = savedYear;
-    if(savedSem) document.getElementById('semSelect').value = savedSem;
-}
-
-// 🎯 The Logic to Extract and Combine
-function openSemesterNotes() {
-    const branchSelect = document.getElementById('branchSelect');
-    const yearSelect = document.getElementById('yearSelect');
-    const semSelect = document.getElementById('semSelect');
-
-    // Prevent crashing if a dropdown is missing from HTML
-    if (!branchSelect || !yearSelect || !semSelect) {
-         alert("Dropdown elements missing. Please check HTML.");
-         return;
-    }
-
-    const branch = branchSelect.value;
-    const year = yearSelect.value;
-    const sem = semSelect.value;
-
-    if (!branch || !year || !sem) {
-        alert("Please select Branch, Year, and Semester.");
-        return;
-    }
-
-    // Save choices for next time
-    localStorage.setItem('raghuBranch', branch);
-    localStorage.setItem('raghuYear', year);
-    localStorage.setItem('raghuSem', sem);
-
-    const key = `${branch}-${year}-${sem}`;
-    const targetLink = semesterLinks[key];
-
-    if (targetLink && targetLink !== "#") {
-        window.open(targetLink, '_blank');
-    } else {
-        alert("Materials for " + branch + " " + year + "-" + sem + " are currently being updated.");
-    }
-}
-
-// Render Cards with "Report Flag"
-// Render Cards with "Report Flag"
-function renderCards(dataArray, containerId, badgeText, badgeClass) {
-    const container = document.getElementById(containerId);
-    if(!container) return; // safeguard
-    container.innerHTML = ''; 
-
-    dataArray.forEach(item => {
-        const badgeHTML = badgeText ? `<span class="badge ${badgeClass}">${badgeText}</span>` : '';
-        const card = `
-            <div class="glass-card searchable-item" data-title="${item.title.toLowerCase()}">
-                <a href="${item.link}" target="_blank" style="display:block; height:100%;">
-                    <div class="card-header">
-                        <i class="fa-solid ${item.icon} card-icon"></i>
-                        ${badgeHTML}
-                    </div>
-                    <h3 class="card-title">${item.title}</h3>
-                </a>
-                <a href="${globalLinks.reportIssue}&body=Reporting broken link for: ${encodeURIComponent(item.title)}" 
-                   class="report-link" title="Report broken link">
-                   <i class="fa-solid fa-flag"></i>
-                </a>
-            </div>
-        `;
-        container.innerHTML += card;
-    });
-}
-
-// Real-time Search
-function handleSearch(e) {
-    const query = e.target.value.toLowerCase();
-    const items = document.querySelectorAll('.searchable-item');
-    items.forEach(item => {
-        const title = item.getAttribute('data-title');
-        if(title) {
-            item.style.display = title.includes(query) ? 'flex' : 'none';
-        }
-    });
-}
+    grid.replaceChildren(fragment);$('emptyState').hidden=results.length!==0;$('searchStatus').textContent=q?`${results.length} matching departments`:`Explore ${data.branches.length} departments and ${allFolders} verified semester folders.`;
+  }
+  drawCards();
+  $('searchInput').addEventListener('input',e=>drawCards(e.target.value));
+  document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement?.tagName!=='INPUT'&&document.activeElement?.tagName!=='SELECT'){e.preventDefault();$('searchInput').focus();}});
+  const themeButton=$('themeBtn');
+  try {if(localStorage.getItem('rnp-theme')==='light')document.body.classList.add('light');}catch(_e){}
+  const syncTheme=()=>{themeButton.textContent=document.body.classList.contains('light')?'☀':'☾';themeButton.setAttribute('aria-label',`Switch to ${document.body.classList.contains('light')?'dark':'light'} mode`);};
+  syncTheme();themeButton.addEventListener('click',()=>{document.body.classList.toggle('light');syncTheme();try{localStorage.setItem('rnp-theme',document.body.classList.contains('light')?'light':'dark');}catch(_e){}});
+})();
