@@ -1,22 +1,11 @@
-/* Verified from REC ACADEMICS > AR 23 > 2023-27 on 23 Nov 2026.
-   To add a semester, append its Drive folder ID under the matching branch.
-   No placeholders are shown on the site. */
-window.PORTAL_DATA = {
-  updated: '2026-11-23',
-  root: '1JeAl9Fy3nvhVil7zBaOAOhiRCSuItSCV',
-  regulation: 'AR 23',
-  drive: '1JfItnHB5p97VdtLYHVz111Ydm6497LIu',
-  community: 'https://chat.whatsapp.com/BSDhYkmpwvbKZq3CChZ9uN',
-  contribute: 'https://forms.gle/dbgi6LQNZNEqkgbR8',
-  branches: [
-    {code:'CSE', name:'Computer Science & Engineering', icon:'💻', folder:'1Jpd-qegwibBbD92tJhMu9Ittw_Xx9-9d', semesters:{'1-1':'1MYPSeeqD8M_He_VS7MebWrVl46IVke5q','1-2':'1aq47CNpmphEUyoDHsVRueGlsIRixWED1','2-1':'1NYxstn8aOqjfzzm3GtjSms3P6ZnwUCNl','2-2':'1NZ8SE5cbRR1Uve4vGL86LUVt1F63Rp73','3-1':'1ogXM6ISymLOFHEXSrX7Xln6QOQXW8xRH','3-2':'1LvrOZ0j70esKs4gPWq8YbrAXrFrisjvr'}},
-    {code:'CSM', name:'AI & Machine Learning', icon:'🤖', folder:'1JuMkCDFU0O1wTOYoVB2itjH0fqHmuTqT', semesters:{'1-1':'1JuTrrrzpFt_uGPlWGINR5n8g4KVuz1Vv','1-2':'1Jy9l_03TvKwCCvLCAQzBAJb5qSu1rKOc','2-1':'1J6u8JsXjDFN91oHEAakf3QkClPaYUiAH','2-2':'1JCnl4aEhFLVlKuiLER9OBSMrgN6NwCMF','3-1':'1dOaBrbA09dO27fddtzT1HoRbPSz3WqfP','3-2':'1MYJczoEvyHd0y1NM0tOPJgq0uX_K3VwA','4-1':'1jGTVL-IqIlW2rpP02ra8X5_3MfFpndzm'}},
-    {code:'CSD', name:'Data Science', icon:'📊', folder:'1JraxukGoMutSfCxF4GnFFXwdTsFGiuq0', semesters:{'1-1':'1-73I49ZEvuia9RQbswTfZKcXcs5lTT34','1-2':'1-7BaDwQtCqacautsZiIz9iyotuP01iOb','2-1':'1QDAuEpMsv1AtUDtue1OyP36W1Fum5Qde'}},
-    {code:'CSC', name:'Cyber Security', icon:'🔐', folder:'1Jt_IHGlmwSbjPmQtsGWf6D5scB7aM0uU', semesters:{'1-1':'1a1mXA8_FjeeGQmYWY-FF9TkSV6tAQHQ1','1-2':'1aky1XcZEnePkxvVRX0cwZET6VUZI2QPe','2-1':'1dpNDw-cjfvNJ1NRP1l7vW01ncG2SMWBZ'}},
-    {code:'CSO', name:'Internet of Things', icon:'🌐', folder:'1Jq9JOJD8TgbWFyENlOPVUGWx10ycutKA', semesters:{'1-1':'1a4z0ci0eFhYqcrQF4G4lUsG8GYnW4V_Z','1-2':'1aw7--XUxIShMQ0LqeTLw0-uZu1O2EY_8'}},
-    {code:'ECE', name:'Electronics & Communication', icon:'📡', folder:'1JpSNqNSsYTYJEHJ8Repns2LX0obQ_LB7', semesters:{'1-1':'1r4CerY39du6SzDUv0JrHwULBqmG5aTIM','1-2':'1JbhILZ5SxgRjXbOE_8Y7ni4eyKWVMhjs'}},
-    {code:'EEE', name:'Electrical & Electronics', icon:'⚡', folder:'1k6rkoqO7U8rjUCMJ_-FzzMvLn9SuonW6', semesters:{'1-1':'1kAiLyqca56y-N38IBMm1dUtXxvDeZsZ1','1-2':'1kEhB7xRnZFe3cgA9rFaPtEB1UuSX6Gd1'}},
-    {code:'MECH', name:'Mechanical Engineering', icon:'⚙️', folder:'1Jn4o7_a5ONXFhK61oOSU_byXzRtEVamF', semesters:{'1-1':'1WCvyB9W3O_DyHGOVtpEah4P_SY2U28xn','1-2':'1WAL2EqHfrEIOzYJ4EOueBHQL8FEH6i7i'}},
-    {code:'CIVIL', name:'Civil Engineering', icon:'🏛️', folder:'1JhfQm71trSCbMuqQPLfhtOnS4TxxVFcg', semesters:{'1-1':'1acEkVhZFHIuPQu_5e2XBdb143hMPKPql','1-2':'1ajEGKVxfKBBGK9TB-MMfnAx0k3OW91cR','2-1':'1NI2zeWA7RqSa0sijhv-Ptnz4_NSiYSUp','2-2':'1NNDV7EVP2RuCagLTbC8m-GaSSnN6yFwY'}}
-  ]
-};
+/* Drive folder catalog verified on 23 November 2026; public access should be checked separately. */
+window.PORTAL_DATA={updated:'2026-11-23',root:'1JeAl9Fy3nvhVil7zBaOAOhiRCSuItSCV',regulation:'AR 23',drive:'1JfItnHB5p97VdtLYHVz111Ydm6497LIu',community:'https://chat.whatsapp.com/BSDhYkmpwvbKZq3CChZ9uN',contribute:'https://forms.gle/dbgi6LQNZNEqkgbR8',linkedin:'https://www.linkedin.com/in/manikanta-ganduri-1bb152309/',branches:[
+{code:'CSE',name:'Computer Science & Engineering',icon:'💻',folder:'1Jpd-qegwibBbD92tJhMu9Ittw_Xx9-9d',semesters:{'1-1':'1MYPSeeqD8M_He_VS7MebWrVl46IVke5q','1-2':'1aq47CNpmphEUyoDHsVRueGlsIRixWED1','2-1':'1NYxstn8aOqjfzzm3GtjSms3P6ZnwUCNl','2-2':'1NZ8SE5cbRR1Uve4vGL86LUVt1F63Rp73','3-1':'1ogXM6ISymLOFHEXSrX7Xln6QOQXW8xRH','3-2':'1LvrOZ0j70esKs4gPWq8YbrAXrFrisjvr'}},
+{code:'CSM',name:'AI & Machine Learning',icon:'🤖',folder:'1JuMkCDFU0O1wTOYoVB2itjH0fqHmuTqT',semesters:{'1-1':'1JuTrrrzpFt_uGPlWGINR5n8g4KVuz1Vv','1-2':'1Jy9l_03TvKwCCvLCAQzBAJb5qSu1rKOc','2-1':'1J6u8JsXjDFN91oHEAakf3QkClPaYUiAH','2-2':'1JCnl4aEhFLVlKuiLER9OBSMrgN6NwCMF','3-1':'1dOaBrbA09dO27fddtzT1HoRbPSz3WqfP','3-2':'1MYJczoEvyHd0y1NM0tOPJgq0uX_K3VwA','4-1':'1jGTVL-IqIlW2rpP02ra8X5_3MfFpndzm'}},
+{code:'CSD',name:'Data Science',icon:'📊',folder:'1JraxukGoMutSfCxF4GnFFXwdTsFGiuq0',semesters:{'1-1':'1-73I49ZEvuia9RQbswTfZKcXcs5lTT34','1-2':'1-7BaDwQtCqacautsZiIz9iyotuP01iOb','2-1':'1QDAuEpMsv1AtUDtue1OyP36W1Fum5Qde'}},
+{code:'CSC',name:'Cyber Security',icon:'🔐',folder:'1Jt_IHGlmwSbjPmQtsGWf6D5scB7aM0uU',semesters:{'1-1':'1a1mXA8_FjeeGQmYWY-FF9TkSV6tAQHQ1','1-2':'1aky1XcZEnePkxvVRX0cwZET6VUZI2QPe','2-1':'1dpNDw-cjfvNJ1NRP1l7vW01ncG2SMWBZ'}},
+{code:'CSO',name:'Internet of Things',icon:'🌐',folder:'1Jq9JOJD8TgbWFyENlOPVUGWx10ycutKA',semesters:{'1-1':'1a4z0ci0eFhYqcrQF4G4lUsG8GYnW4V_Z','1-2':'1aw7--XUxIShMQ0LqeTLw0-uZu1O2EY_8'}},
+{code:'ECE',name:'Electronics & Communication',icon:'📡',folder:'1JpSNqNSsYTYJEHJ8Repns2LX0obQ_LB7',semesters:{'1-1':'1r4CerY39du6SzDUv0JrHwULBqmG5aTIM','1-2':'1JbhILZ5SxgRjXbOE_8Y7ni4eyKWVMhjs'}},
+{code:'EEE',name:'Electrical & Electronics',icon:'⚡',folder:'1k6rkoqO7U8rjUCMJ_-FzzMvLn9SuonW6',semesters:{'1-1':'1kAiLyqca56y-N38IBMm1dUtXxvDeZsZ1','1-2':'1kEhB7xRnZFe3cgA9rFaPtEB1UuSX6Gd1'}},
+{code:'MECH',name:'Mechanical Engineering',icon:'⚙️',folder:'1Jn4o7_a5ONXFhK61oOSU_byXzRtEVamF',semesters:{'1-1':'1WCvyB9W3O_DyHGOVtpEah4P_SY2U28xn','1-2':'1WAL2EqHfrEIOzYJ4EOueBHQL8FEH6i7i'}},
+{code:'CIVIL',name:'Civil Engineering',icon:'🏛️',folder:'1JhfQm71trSCbMuqQPLfhtOnS4TxxVFcg',semesters:{'1-1':'1acEkVhZFHIuPQu_5e2XBdb143hMPKPql','1-2':'1ajEGKVxfKBBGK9TB-MMfnAx0k3OW91cR','2-1':'1NI2zeWA7RqSa0sijhv-Ptnz4_NSiYSUp','2-2':'1NNDV7EVP2RuCagLTbC8m-GaSSnN6yFwY'}}]};
